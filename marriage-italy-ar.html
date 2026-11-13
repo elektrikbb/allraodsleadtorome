@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f4c5c" />
   <title>دليل الزواج والإقامة الدائمة والجنسية في إيطاليا</title>
   <style>
     :root {
@@ -25,18 +26,24 @@
       padding: 0;
     }
 
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      font-family: 'Segoe UI', 'Noto Naskh Arabic', 'Traditional Arabic', Tahoma, Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.85;
-      padding-bottom: 60px;
+      line-height: 1.75;
+      padding-bottom: max(40px, env(safe-area-inset-bottom));
+      overflow-x: hidden;
     }
 
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #ffffff;
-      padding: 55px 20px 65px;
+      padding: clamp(32px, 8vw, 55px) 16px clamp(40px, 10vw, 65px);
       text-align: center;
       border-bottom: 5px solid var(--accent);
       box-shadow: 0 10px 30px rgba(15, 76, 92, 0.15);
@@ -44,41 +51,44 @@
 
     .italy-ribbon {
       height: 6px;
-      width: 130px;
-      margin: 0 auto 20px;
+      width: 110px;
+      margin: 0 auto 16px;
       border-radius: 99px;
       background: linear-gradient(to left, #008c45 33.3%, #ffffff 33.3%, #ffffff 66.6%, #cd212a 66.6%);
     }
 
     header h1 {
-      font-size: 2.15rem;
+      font-size: clamp(1.45rem, 5.5vw, 2.15rem);
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     header p {
       max-width: 680px;
       margin: 0 auto;
-      font-size: 1.08rem;
+      font-size: clamp(0.95rem, 3.8vw, 1.08rem);
       color: #cbd5e1;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 920px;
-      margin: -30px auto 0;
-      padding: 0 18px;
+      margin: -24px auto 0;
+      padding: 0 12px;
       position: relative;
       z-index: 10;
     }
 
     .lead-card {
       background: var(--card-bg);
-      border-right: 6px solid var(--accent);
-      padding: 24px 28px;
-      border-radius: 16px;
-      margin-bottom: 28px;
-      box-shadow: 0 12px 28px rgba(15, 76, 92, 0.08);
-      font-size: 1.08rem;
+      border-right: 5px solid var(--accent);
+      padding: 18px 16px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(15, 76, 92, 0.08);
+      font-size: clamp(0.98rem, 3.6vw, 1.08rem);
+      line-height: 1.7;
     }
 
     .lead-card strong {
@@ -87,40 +97,42 @@
 
     .card {
       background: var(--card-bg);
-      border-radius: 18px;
-      padding: 30px 32px;
-      margin-bottom: 26px;
-      box-shadow: 0 6px 20px rgba(15, 76, 92, 0.05);
+      border-radius: 16px;
+      padding: 20px 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(15, 76, 92, 0.05);
       border: 1px solid var(--border);
     }
 
     .card-header {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
       border-bottom: 2px solid var(--highlight-bg);
     }
 
     .card-num {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       background: var(--primary);
       color: #ffffff;
-      border-radius: 10px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .card-header h2 {
-      font-size: 1.4rem;
+      font-size: clamp(1.15rem, 4.2vw, 1.4rem);
       color: var(--primary);
       font-weight: 800;
+      line-height: 1.4;
     }
 
     ul.styled-list {
@@ -129,8 +141,9 @@
 
     ul.styled-list li {
       position: relative;
-      padding-right: 28px;
-      margin-bottom: 16px;
+      padding-right: 26px;
+      margin-bottom: 14px;
+      line-height: 1.7;
     }
 
     ul.styled-list li:last-child {
@@ -141,61 +154,66 @@
       content: "✔";
       position: absolute;
       right: 0;
-      top: 1px;
+      top: 2px;
       color: var(--accent);
       font-weight: 800;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .it-term {
-      display: inline-block;
+      display: inline;
       background: #f1f5f9;
       color: #0f172a;
-      padding: 1px 9px;
-      border-radius: 6px;
+      padding: 1px 6px;
+      border-radius: 5px;
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.88em;
+      font-size: 0.85em;
       direction: ltr;
+      unicode-bidi: embed;
       border: 1px solid #cbd5e1;
-      margin: 0 2px;
+      margin: 0 1px;
+      white-space: nowrap;
     }
 
     .intro-note {
       background: var(--highlight-bg);
-      padding: 14px 18px;
+      padding: 12px 14px;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       font-weight: 600;
       color: var(--primary-dark);
+      font-size: 0.98rem;
     }
 
     .table-box {
       overflow-x: auto;
-      margin: 18px 0 28px;
-      border-radius: 14px;
+      -webkit-overflow-scrolling: touch;
+      margin: 16px 0 22px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 620px;
+      min-width: 560px;
       background: #ffffff;
     }
 
     th, td {
-      padding: 16px 18px;
+      padding: 12px 12px;
       text-align: right;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
+      font-size: 0.95rem;
     }
 
     th {
       background: var(--primary);
       color: #ffffff;
       font-weight: 700;
-      font-size: 1.02rem;
+      font-size: 0.98rem;
     }
 
     tr:last-child td {
@@ -210,18 +228,19 @@
       display: inline-block;
       background: var(--accent);
       color: #ffffff;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 2px 10px;
+      padding: 2px 8px;
       border-radius: 99px;
-      margin-right: 6px;
+      margin-right: 4px;
+      white-space: nowrap;
     }
 
     .sub-title {
-      font-size: 1.2rem;
+      font-size: clamp(1.05rem, 3.8vw, 1.2rem);
       font-weight: 800;
       color: var(--primary-light);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .steps {
@@ -230,10 +249,10 @@
 
     .step-item {
       position: relative;
-      padding-right: 54px;
-      padding-bottom: 24px;
+      padding-right: 48px;
+      padding-bottom: 20px;
       border-right: 2px dashed #cbd5e1;
-      margin-right: 18px;
+      margin-right: 16px;
     }
 
     .step-item:last-child {
@@ -245,10 +264,10 @@
       counter-increment: step-counter;
       content: counter(step-counter);
       position: absolute;
-      right: -19px;
+      right: -18px;
       top: 0;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       color: #ffffff;
       border-radius: 50%;
@@ -256,31 +275,96 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      box-shadow: 0 4px 10px rgba(15, 76, 92, 0.25);
+      font-size: 0.95rem;
+      box-shadow: 0 3px 8px rgba(15, 76, 92, 0.22);
     }
 
     .step-item h4 {
-      font-size: 1.12rem;
+      font-size: 1.05rem;
       color: var(--primary);
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       font-weight: 700;
+      line-height: 1.4;
     }
 
     .step-item p {
       color: var(--text);
+      font-size: 0.97rem;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 28px;
+      padding: 0 8px;
       color: var(--text-muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.65rem; }
-      .card { padding: 22px 18px; }
-      .lead-card { padding: 20px; }
+    /* Tablet and up */
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 20px;
+        margin-top: -30px;
+      }
+      .card {
+        padding: 28px 30px;
+        border-radius: 18px;
+      }
+      .lead-card {
+        padding: 22px 26px;
+      }
+      .card-num {
+        width: 38px;
+        height: 38px;
+      }
+      th, td {
+        padding: 14px 16px;
+      }
+      .step-item {
+        padding-right: 54px;
+        margin-right: 18px;
+      }
+      .step-item::before {
+        width: 36px;
+        height: 36px;
+        right: -19px;
+      }
+    }
+
+    /* Larger phones / small tablets */
+    @media (max-width: 480px) {
+      .card-header {
+        gap: 8px;
+      }
+      .card-num {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+      }
+      ul.styled-list li {
+        padding-right: 24px;
+        margin-bottom: 12px;
+      }
+      .table-box {
+        margin-left: -4px;
+        margin-right: -4px;
+        border-radius: 10px;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      header {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      .container {
+        padding: 0 8px;
+      }
+      .lead-card, .card {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
     }
   </style>
 </head>
@@ -360,9 +444,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>طريقة الدخول إلى إيطاليا</strong></td>
+              <td><strong>نوع التأشيرة</strong></td>
               <td>يتقدم زوجك/زوجتك بطلب التجمع العائلي (<span class="it-term">Nulla Osta</span>) في إيطاليا، وتدخل أنت بـ <strong>تأشيرة تجمع عائلي</strong> عبر مركز TLScontact.</td>
-              <td>ستحتاج أولاً إلى تأشيرة منفصلة لدخول إيطاليا (مثل تأشيرة شنغن السياحية، والتي يصعب الحصول عليها غالباً لغير المتزوجين).</td>
+              <td>تحتاج إلى تأشيرة سياحية أو قصيرة الأجل للدخول، ثم إجراء الزواج في البلدية، وبعدها طلب الإقامة.</td>
             </tr>
             <tr>
               <td><strong>الاعتراف القانوني</strong></td>
